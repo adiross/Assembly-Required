@@ -194,7 +194,7 @@ states/Punch/node = SubResource( 8 )
 states/Punch/position = Vector2( 643, 144 )
 transitions = [ "Idle_Attached", "Idle_Detatched", SubResource( 9 ), "Idle_Detatched", "Idle_Attached", SubResource( 10 ), "Idle_Attached", "Punch", SubResource( 11 ), "Punch", "Idle_Attached", SubResource( 12 ) ]
 start_node = "Idle_Detatched"
-graph_offset = Vector2( 147, -37 )
+graph_offset = Vector2( 72, 30 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=14]
 
@@ -220,7 +220,7 @@ active = true
 parameters/playback = SubResource( 14 )
 
 [node name="RearArm" type="Sprite" parent="."]
-rotation = 0.47473
+rotation = 0.979824
 texture = ExtResource( 2 )
 offset = Vector2( 8, 0 )
 hframes = 3
@@ -228,7 +228,7 @@ vframes = 3
 
 [node name="ForeArm" type="Sprite" parent="RearArm"]
 position = Vector2( 18.3848, 0 )
-rotation = -0.951204
+rotation = -2.11546
 texture = ExtResource( 2 )
 offset = Vector2( 8, 0 )
 hframes = 3
@@ -237,7 +237,7 @@ frame = 1
 
 [node name="Hand" type="Sprite" parent="RearArm/ForeArm"]
 position = Vector2( 19.799, -1.90735e-06 )
-rotation = 0.460767
+rotation = 0.56646
 texture = ExtResource( 2 )
 hframes = 6
 vframes = 3
@@ -248,4 +248,6 @@ frame = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
 
-[connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

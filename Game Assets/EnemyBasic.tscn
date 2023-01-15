@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Assets/Robot/RobotEVIL.png" type="Texture" id=1]
 [ext_resource path="res://Game Assets/EnemySocket.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Game Assets/BasicEnemyArm.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "Idle"
@@ -254,6 +255,10 @@ tracks/8/keys = {
 [node name="Enemy" type="Node2D"]
 scale = Vector2( -1, 1 )
 
+[node name="BasicEnemyArmFront" parent="." instance=ExtResource( 3 )]
+position = Vector2( 8.00037, -7.00094 )
+scale = Vector2( 1, 1 )
+
 [node name="BackLeg" type="Sprite" parent="."]
 position = Vector2( 5, 32 )
 rotation = 1.05592
@@ -340,3 +345,8 @@ z_index = -1
 
 [node name="FrontEnemySocket" parent="." instance=ExtResource( 2 )]
 z_index = 1
+
+[node name="BasicEnemyArmBack" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.000305176, -0.000930786 )
+rotation = -3.14159
+scale = Vector2( -1, -1 )

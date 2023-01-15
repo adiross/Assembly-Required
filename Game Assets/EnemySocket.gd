@@ -1,12 +1,12 @@
 extends Position2D
 
-export var EnemySocketFull = false
+export var enemySocketFull = false
 
 func select():
 	for child in get_tree().get_nodes_in_group("enemySocket"):
 		child.deselect()
-	EnemySocketFull = true
-	print(get_tree().get_nodes_in_group("enemySocket"))
+	enemySocketFull = true
+	print(enemySocketFull)
 	
 func deselect():
-	EnemySocketFull = false
+	enemySocketFull = false

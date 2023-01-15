@@ -296,8 +296,8 @@ vframes = 3
 frame = 10
 
 [node name="Body" type="Sprite" parent="."]
-position = Vector2( 0, 1 )
-rotation = 1.67552
+position = Vector2( 0, 0.530816 )
+rotation = 1.65914
 texture = ExtResource( 1 )
 offset = Vector2( 16, 0 )
 region_enabled = true
@@ -334,8 +334,9 @@ anims/Idle = SubResource( 1 )
 anims/RESET = SubResource( 2 )
 
 [node name="RightSocket" parent="." instance=ExtResource( 2 )]
+position = Vector2( 0, 0.5 )
 z_index = 1
 
 [node name="LeftSocket" parent="." instance=ExtResource( 2 )]
-position = Vector2( 8, -7 )
+position = Vector2( 8, -6 )
 z_index = -1

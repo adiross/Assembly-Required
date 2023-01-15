@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Game Assets/BasicArm.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Game Assets/BasicEnemyArm.tscn" type="PackedScene" id=2]
 [ext_resource path="res://Game Assets/Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Game Assets/EnemyBasic.tscn" type="PackedScene" id=4]
 
@@ -10,29 +9,18 @@
 [node name="YSort" type="YSort" parent="."]
 
 [node name="Enemy" parent="YSort" instance=ExtResource( 4 )]
-position = Vector2( 140, 77 )
+position = Vector2( 192, 72 )
 rotation = 3.14159
 scale = Vector2( 1, -1 )
 
-[node name="BasicEnemyArmFront" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 139, 78 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
-
-[node name="BasicEnemyArmBack" parent="YSort" instance=ExtResource( 2 )]
-position = Vector2( 132, 70 )
-rotation = -3.14159
-scale = Vector2( 1, -1 )
-
 [node name="Player" parent="YSort" instance=ExtResource( 3 )]
-position = Vector2( 82, 77 )
+position = Vector2( 128, 72 )
 
 [node name="BasicArm" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 119, 154 )
+position = Vector2( 72, 152 )
 z_index = 1
 
 [node name="BasicArm2" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 26, 152 )
+visible = false
+position = Vector2( 120, 160 )
 z_index = 1
-
-[editable path="YSort/Player"]
