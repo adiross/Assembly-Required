@@ -10,6 +10,7 @@ onready var animationState = animationTree.get("parameters/playback")
 export var ground = 154
 const punch = "Punch"
 var punching = false
+signal enemyPunch
 
 func _ready():
 	rest_nodes = get_tree().get_nodes_in_group("enemySocket")
@@ -41,6 +42,7 @@ func punch():
 	var timerRange = rand_range(1, 5)
 	yield(get_tree().create_timer(timerRange), "timeout")
 	animationState.travel("Punch")
+	emit_signal("enemyPunch")
 	punching = false
 	return
 
@@ -62,6 +64,3 @@ func checkSocket():
 			rest_point = Vector2(position.x, ground)
 			animationState.travel("Idle_Detatched")
 
-
-func _on_Timer_timeout():
-	pass # Replace with function body.
